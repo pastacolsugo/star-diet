@@ -1,0 +1,504 @@
+@font-face {
+    font-family: DejaVuMono;
+    src: url(/font/dejavumono);
+}
+
+
+/*http://google.github.io/material-design-icons/*/
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(http://localhost:8080/font/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(http://localhost:8080/font/MaterialIcons-Regular.woff2) format('woff2'),
+    url(http://localhost:8080/font/MaterialIcons-Regular.woff) format('woff'),
+    url(http://localhost:8080/font/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: url(http://localhost:3000/Roboto.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-64 { font-size: 64px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.google-inbox-shadow {
+    box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 5em auto;
+    grid-template-columns: minmax(10em, 14em) minmax(50em, 3000em);
+    /*                    1   2     3   */
+
+    /*font-family: "DejaVuMono";*/
+    font-family: Roboto, sans-serif;
+    /*background-color: #b4e800;*/
+    /*background-color: #abc5ff;*/
+
+    /*inbox*/
+    /*background-color: #f2f2f2;*/
+
+    background-color: rgb(20,21,15);
+    margin: 0;
+
+    font-size: 12pt;
+}
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: auto 4% 10%;
+
+    /*background-color: #f37000
+    /*background-color: #009b7d*/
+    /*background-color: #0437ab;*/
+    /*background-color: #0D6C7D;*/ /*cado*/
+
+    /*inbox*/
+    background-color: #4285f4; 
+
+    background-color: rgb(46,113,224);
+
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 2px 8px rgba(0,0,0,.28);
+}
+
+.title {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+div.title h1 {
+    margin-left: 0.9em;
+    margin-right: 1em;
+    margin-top: 0.65em;
+    margin-bottom: 0.65em;
+    color: white;
+}
+
+.sidebar {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    color: white;
+    /*background-color: #6795ff;*/
+    background-color: rgba(0, 0, 0, 0.7);
+
+    box-shadow: inset -1px 4px 6px 0px black;
+}
+
+.header .userImg {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    margin-top: 1em;
+    margin-right: 1em;
+
+    color: white;
+}
+
+.header .userName {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    margin-top: 2em;
+    margin-left: 0.5em;
+
+    color: white;
+}
+
+.timer {
+    color: white;
+    font-size: 22pt;
+
+    margin-left: 1em;
+}
+
+.problemBox {
+    display: grid;
+    grid-template-columns: auto 15%;
+    grid-template-rows: auto;
+    /*                 1   2    3    4*/
+
+    font-size: 12pt;
+
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    margin-right: 1.5em;
+
+    border-top: 1em;
+    border-bottom: 1em;
+
+    /*border: solid grey 1px;*/
+    padding: 1.2em;
+    padding-left: 0.6em;
+    
+    box-shadow: -2px 1px 4px 0px black;
+}
+
+.problemTitle {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    font-weight: 800;
+    color:white;
+    /*color: black;*/
+}
+
+.problemScore {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.link {
+    color: rgb(50, 50, 50);
+    /*text-decoration: none !important;*/
+}
+
+.statementLink {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    margin-top: 0.3em;
+    margin-bottom: 0.2em;
+    margin-right: 9em;
+
+    font-weight: 100;
+    font-size: 10pt;
+}
+
+.submissionLink {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    font-weight: 100;
+    font-size: 10pt;
+
+    margin-bottom: 0.2em;
+    margin-right: 6em;
+}
+
+.alert {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.hide {
+    display: none;
+}
+
+.openProblem {
+    margin-right: 0em;
+    padding-top: 1em;
+    padding-bottom: 2.5em;
+}
+
+.venusColor {
+    background: rgb(143,118,72);
+    background: linear-gradient(90deg, rgba(143,118,72,1) 17%, rgba(211,192,156,1) 100%);
+}
+
+.earthColor {
+    /*https://cssgradient.io/*/
+    background: rgb(15,63,168);
+    background: linear-gradient(90deg, rgba(15,63,168,1) 51%, rgba(94,170,0,1) 100%);
+}
+
+.moonColor {
+    background: rgb(61,60,58);
+    background: linear-gradient(90deg, rgba(61,60,58,1) 0%, rgba(200,196,190,1) 72%);
+}
+
+.marsColor {
+    background: rgb(114,74,58);
+    background: linear-gradient(66deg, rgba(114,74,58,1) 0%, rgba(239,121,84,1) 84%);
+}
+
+.sunColor {
+    background: rgb(172,10,3);
+    background: linear-gradient(35deg, rgba(172,10,3,1) 0%, rgba(255,138,16,1) 100%);
+}
+
+.neptuneColor {
+    background: rgb(40,53,145);
+    background: linear-gradient(0deg, rgba(40,53,145,1) 0%, rgba(60,96,251,1) 53%, rgba(47,62,184,1) 84%);
+}
+
+.uranusColor {
+    background: rgb(122,157,164);
+    background: linear-gradient(35deg, rgba(122,157,164,1) 7%, rgba(202,245,246,1) 52%);
+}
+
+.saturnColor {
+    background: rgb(98,91,85);
+    background: linear-gradient(26deg, rgba(98,91,85,1) 0%, rgba(211,176,147,1) 53%, rgba(140,130,120,1) 84%);
+}
+
+.mercuryColor {
+    background: rgb(116,76,55);
+    background: linear-gradient(90deg, rgba(116,76,55,1) 4%, rgba(244,196,151,1) 100%);
+}
+
+.jupiterColor {
+    background: rgb(212,167,125);
+    background: linear-gradient(0deg, rgba(212,167,125,1) 11%, rgba(137,124,115,1) 57%, rgba(250,250,248,1) 100%);
+}
+
+.redScore {
+    /*background: red;*/
+    /*background: rgba(255, 40, 0, 0.85);*/
+    background: #bd3030;
+}
+
+.content {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    padding: 2em;
+    padding-right: 3em;
+    position: relative;
+}
+
+.content.submissions {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 2% auto 20%;
+}
+
+.problemTitle {
+    margin-top: 0;
+}
+
+.stuff {
+    background-color: purple;
+    color: white;
+    padding: 3em;
+}
+
+.time {
+    display: inline-block;
+    color: black;
+    font-size: 12pt
+}
+
+.time.seconds {
+    display: inline-block;
+    font-size: 8pt;
+    color: rgba(0, 0, 0, 0.35);
+    /*padding: 0 0.2em;*/
+}
+
+.submissionTable {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.submissionTable table {
+    /*border: solid black 1px;*/
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    color: #212121;
+}
+
+.submissionTable tr {
+    margin: 0;
+}
+
+.submissionTable tr td {
+    border: solid rgba(0, 0, 0, 0.3) 1px;
+    border-width: 1px 0px;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.status {
+    padding: 0.5em 4em;
+    text-align: center;
+    margin: 0px;
+}
+
+.submissionTime {
+    text-align: center;
+}
+
+.submissionDownload {
+    text-align: center;
+    padding: 0.3em 1em;
+}
+
+.submissionTable .lastSubmission td {
+    border-width: 0 0 1px 0;
+}
+
+.submissionTable .firstSubmission td {
+    border-width: 1px 0 0 0;
+}
+
+.material-icons.download-icon {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.drag-drop-area.drag-drop-area-highlight {
+    /*https://stackoverflow.com/questions/9182978/semi-transparent-color-layer-over-background-image*/
+    /*position: absolute;*/
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0; 
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 40, 250, 0.4);
+
+    /* Do not use the border, use an inset box shadow instead
+     The border messes up the element position: 
+     - the highlight dimension are set @ 100% it's parent's size
+     - if you add a 3px border, the total highlight div size's 
+        increases to 100% + 6px (3px * 2 sides)
+     - when the highlight div gets placed to (0, 0), it goes 
+        outside the page, messing things up and hiding the 
+        bottom and right border 
+    -> the inset box shadow remains inside, but it can't be 
+        rounded, only blurred
+
+    blurring it makes things quite messy, there are already enough shadows
+    */
+    box-shadow: inset 0 0 0px 3px blue;
+
+    display: grid;
+    grid-template-columns: 33% auto 33%;
+    grid-template-rows: auto 10% 10%;
+}
+
+.drag-drop-area.drag-drop-area-highlight.hide {
+    /* display:none doesn't work on elements
+     which have css grid inside
+     I tried simply removing the background but
+     doing so, the element would still be there
+     and each click event would have it as target.
+     By giving it no size there is no blue tint
+     and the click event's target are normal
+     */
+    height: 0;
+    width: 0;
+    background: rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+
+
+.drag-drop-area.icon-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-column-end: 2;
+
+    display: grid;
+
+    grid-template-columns: 40% auto 40%;
+    grid-template-rows: 90% auto 3%;
+}
+
+.drag-drop-area.material-icons {
+    color: white;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: center;
+}
+
+.drag-drop-area.drag-drop-area-message {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    color: white;
+    background: rgba(0, 0, 255, 0.8);
+    border-radius: 1.5em;
+    text-align: center;
+    padding: 2em 0 0 0;
+}
+
+
+
