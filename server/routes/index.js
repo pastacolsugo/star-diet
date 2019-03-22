@@ -15,6 +15,14 @@ router.get('/butter', function(req, res, next){
 	res.sendFile(path.join(__dirname, '../../butter.html'));
 });
 
+router.get('/star-diet', function(req, res, next){
+	res.sendFile(path.join(__dirname, '../../butter.html'));
+});
+
+router.get('/Roboto.ttf', function(req, res, next){
+	res.sendFile(path.join(__dirname, '../font/Roboto/Roboto-regular.ttf'));
+})
+
 router.get('/butter.css', function(req, res, next){
 	res.sendFile(path.join(__dirname, '../../butter.css'));
 });

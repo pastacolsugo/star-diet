@@ -103,7 +103,7 @@ body {
 
     display: grid;
     grid-template-rows: 100%;
-    grid-template-columns: auto 4% 10%;
+    grid-template-columns: auto 4% 25%;
 
     /*background-color: #f37000
     /*background-color: #009b7d*/
@@ -119,10 +119,14 @@ body {
 }
 
 .title {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.event-name {
+    color: white;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
 }
 
 div.title h1 {
@@ -317,10 +321,14 @@ div.title h1 {
     background: linear-gradient(0deg, rgba(212,167,125,1) 11%, rgba(137,124,115,1) 57%, rgba(250,250,248,1) 100%);
 }
 
-.redScore {
-    /*background: red;*/
-    /*background: rgba(255, 40, 0, 0.85);*/
-    background: #bd3030;
+.neutronStarColor {
+    background: rgb(191,191,191);
+    background: linear-gradient(26deg, rgba(191,191,191,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+.plutoColor {
+    background: rgb(45,31,18);
+    background: linear-gradient(26deg, rgba(45,31,18,1) 0%, rgba(227,196,161,1) 100%);
 }
 
 .content {
@@ -335,12 +343,18 @@ div.title h1 {
 
 .content.submissions {
     display: grid;
-    grid-template-rows: 100%;
-    grid-template-columns: 2% auto 20%;
+    grid-template-rows: 10% auto;
+    grid-template-columns: 2% auto 2%;
 }
 
 .problemTitle {
     margin-top: 0;
+}
+
+.content .problemTitle {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    text-align: center;
 }
 
 .stuff {
@@ -349,66 +363,12 @@ div.title h1 {
     padding: 3em;
 }
 
-.time {
-    display: inline-block;
-    color: black;
-    font-size: 12pt
-}
-
-.time.seconds {
-    display: inline-block;
-    font-size: 8pt;
-    color: rgba(0, 0, 0, 0.35);
-    /*padding: 0 0.2em;*/
-}
-
-.submissionTable {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-
-.submissionTable table {
-    /*border: solid black 1px;*/
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    color: #212121;
-}
-
-.submissionTable tr {
-    margin: 0;
-}
-
-.submissionTable tr td {
-    border: solid rgba(0, 0, 0, 0.3) 1px;
-    border-width: 1px 0px;
-    border-collapse: collapse;
-    margin: 0;
-}
-
-.status {
-    padding: 0.5em 4em;
+.weight {
+    color: white;
+    grid-row: 1 / -1;
+    grid-column: 2 / 3;
+    font-size: 80pt;
     text-align: center;
-    margin: 0px;
-}
-
-.submissionTime {
-    text-align: center;
-}
-
-.submissionDownload {
-    text-align: center;
-    padding: 0.3em 1em;
-}
-
-.submissionTable .lastSubmission td {
-    border-width: 0 0 1px 0;
-}
-
-.submissionTable .firstSubmission td {
-    border-width: 1px 0 0 0;
 }
 
 .material-icons.download-icon {
@@ -416,89 +376,3 @@ div.title h1 {
     margin: 0;
     padding: 0;
 }
-
-.drag-drop-area.drag-drop-area-highlight {
-    /*https://stackoverflow.com/questions/9182978/semi-transparent-color-layer-over-background-image*/
-    /*position: absolute;*/
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding: 0; 
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 40, 250, 0.4);
-
-    /* Do not use the border, use an inset box shadow instead
-     The border messes up the element position: 
-     - the highlight dimension are set @ 100% it's parent's size
-     - if you add a 3px border, the total highlight div size's 
-        increases to 100% + 6px (3px * 2 sides)
-     - when the highlight div gets placed to (0, 0), it goes 
-        outside the page, messing things up and hiding the 
-        bottom and right border 
-    -> the inset box shadow remains inside, but it can't be 
-        rounded, only blurred
-
-    blurring it makes things quite messy, there are already enough shadows
-    */
-    box-shadow: inset 0 0 0px 3px blue;
-
-    display: grid;
-    grid-template-columns: 33% auto 33%;
-    grid-template-rows: auto 10% 10%;
-}
-
-.drag-drop-area.drag-drop-area-highlight.hide {
-    /* display:none doesn't work on elements
-     which have css grid inside
-     I tried simply removing the background but
-     doing so, the element would still be there
-     and each click event would have it as target.
-     By giving it no size there is no blue tint
-     and the click event's target are normal
-     */
-    height: 0;
-    width: 0;
-    background: rgba(0, 0, 0, 0);
-    box-shadow: none;
-}
-
-
-.drag-drop-area.icon-container {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-column-end: 2;
-
-    display: grid;
-
-    grid-template-columns: 40% auto 40%;
-    grid-template-rows: 90% auto 3%;
-}
-
-.drag-drop-area.material-icons {
-    color: white;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    text-align: center;
-}
-
-.drag-drop-area.drag-drop-area-message {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    color: white;
-    background: rgba(0, 0, 255, 0.8);
-    border-radius: 1.5em;
-    text-align: center;
-    padding: 2em 0 0 0;
-}
-
-
-
