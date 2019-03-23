@@ -340,6 +340,7 @@
             for (let planet in gravity) {
                 let selector = '.' + planet + ' .weight';
                 let adjustedMass = mass * gravity[planet];
+                adjustedMass = Number((adjustedMass).toFixed(2));
                 document.querySelector(selector).innerHTML = adjustedMass + ' kg';
             }
         }
