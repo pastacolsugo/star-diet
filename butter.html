@@ -14,7 +14,7 @@
             <h1>Star Diet</h1>
         </div>
         <div class="event-name">
-            <h2>Le Case della Scienza</h2>
+            <h2>Case della Scienza</h2>
         </div>
     </div>
 
@@ -342,12 +342,16 @@
                 let selector = '.' + planet + ' .weight';
                 let adjustedMass = mass * gravity[planet];
 
+                if (mass <= 2) {
+                    adjustedMass = 0;
+                }
+
                 if (adjustedMass < 10) {
                     adjustedMass = Number((adjustedMass).toFixed(2));    
                 } else {
                     adjustedMass = Number((adjustedMass).toFixed(0));
                 }
-                
+
                 document.querySelector(selector).innerHTML = adjustedMass + ' kg';
             }
         }
