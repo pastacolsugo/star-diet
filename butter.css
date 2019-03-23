@@ -203,6 +203,10 @@ div.title h1 {
     box-shadow: -2px 1px 4px 0px black;
 }
 
+.content .problemTitle {
+    font-size: 40pt;
+}
+
 .problemTitle {
     grid-column-start: 1;
     grid-column-end: 2;
