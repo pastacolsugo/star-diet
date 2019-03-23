@@ -7,6 +7,15 @@ var logger = require('morgan');
 // https://stackoverflow.com/questions/9765215/global-variable-in-app-js-accessible-in-routes
 weight = "3.14 kg";
 
+// mac di ugo
+// const SERIALPORTNAME = '/dev/cu.usbmodem141241';
+
+// pc di giuseppe
+const SERIALPORTNAME = 'COM4';
+
+// raspberry
+// const SERIALPORTNAME = '/dev/qualcosa';
+
 /*
 // SERIAL PORT STUFF
 // https://hackernoon.com/arduino-serial-data-796c4f7d27ce
@@ -39,7 +48,7 @@ const Readline = require('@serialport/parser-readline');
 if (process.argv.length >= 3 && process.argv[2] == 'noserial') {
 	weight = Math.floor(Math.random() * 1000) / 10;
 } else {
-	const port = new SerialPort('/dev/cu.usbmodem141241', { baudRate: 115200 }, function(err) {
+	const port = new SerialPort(SERIALPORTNAME, { baudRate: 115200 }, function(err) {
 		if (err) {
 			console.log("error: " + err);
 		}
