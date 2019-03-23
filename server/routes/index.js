@@ -29,6 +29,7 @@ router.get('/butter.css', function(req, res, next){
 
 router.post('/weight', function(req, res, next) {
 	// let peso = Math.floor(Math.random() * 100);
+	res.setHeader('Access-Control-Allow-Origin', '*');
 
 	res.send({weight : weight});
 
