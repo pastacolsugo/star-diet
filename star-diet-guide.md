@@ -55,3 +55,16 @@ Permi `ctrl + c` nella finestra del terminale.
 ### Aggiorna i valori dalla bilancia
 
 Premi la barra del titolo (quella azzurra in alto!).
+
+### Far Funzionare anche su mobile
+
+Il problema e' che nella pagina web e' contenuto l'URL a cui fare la richiesta per ottenere il peso.
+
+Nella versiona standard l'URL e' `localhost`, ovvero la macchina su cui esegue il codice.
+
+Se il codice viene eseguito su uno smartphone, `localhost` e' lo smartphone, che non ha il server.
+
+* Aprire il file `butter.html`, intorno alla riga `353` ci sono due variabili `SERVER_ADDRESS`.
+* Commenta la prima e metti nella seconda l'indirizzo ip del computer con il server.
+	* Per trovare l'ip del computer con il server aprire il terminale e usare il comando `ifconfig` o `ipconfig`
+* Salva il file

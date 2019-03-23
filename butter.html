@@ -350,9 +350,15 @@
             // var peso = Math.floor(Math.random() * 100);
             console.log('click on header');
 
+            let SERVER_ADDRESS = 'localhost';
+
+            // let SERVER_ADDRESS = '192.168.43.55';
+
+            let requestURL = 'http://' + SERVER_ADDRESS + ':3000/weight';
+
             var xhrRequest = new XMLHttpRequest();
             // cambiare con IP del server !!!
-            xhrRequest.open("POST", 'http://localhost:3000/weight', true);
+            xhrRequest.open("POST", requestURL, true);
             xhrRequest.send();
 
             xhrRequest.onreadystatechange = function() {
